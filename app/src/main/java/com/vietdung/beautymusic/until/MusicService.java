@@ -177,6 +177,7 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
                     cancelNotification();
                     mediaPlayer.stop();
                     mediaPlayer.release();
+                    AppController.getInstance().setMusicService(null);
                     stopSelf();
                 }
 

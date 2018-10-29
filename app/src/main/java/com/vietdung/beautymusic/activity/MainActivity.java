@@ -107,8 +107,12 @@ public class MainActivity extends AppCompatActivity {
         }
         if (musicService1 != null) {
             Log.d("service onstart", "onStart: ");
-            setDisplayMusicBottom();
+            //setDisplayMusicBottom();
 
+        }
+
+        if(musicService1 !=null && musicService1.isCancelMain()){
+            musicService1.setCancelMain(false);
         }
 
         updateBottomControlls();
@@ -182,7 +186,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
-        if (musicService != null&&musicBound) {
+        if (musicService != null&&musicBound && musicService.isPng()) {
+            setDisplayMusicBottom();
+        }else if(musicService1!=null && musicService1.isPng()){
             setDisplayMusicBottom();
         }
         super.onResume();
@@ -228,7 +234,7 @@ public class MainActivity extends AppCompatActivity {
 
                 });
             }
-        } else if (musicService1 != null && musicService1.isPng()) {
+        } else if (musicService1 != null   && musicService1.isPng()) {
             tv_SongBottom.setText(musicService1.getNameSong());
             tv_ArtistBottom.setText(musicService1.getNameArtist());
             seekBarBottom.setMax(musicService1.getTimeTotal());
@@ -275,7 +281,7 @@ public class MainActivity extends AppCompatActivity {
                     tv_SongBottom.setText(musicService.getNameSong());
                     tv_ArtistBottom.setText(musicService.getNameArtist());
                     musicService.autoNextSong();
-                    Log.d("chay vao day", "run:"+musicService.getNameSong());
+                    //Log.d("chay vao day", "run:"+musicService.getNameSong());
                 }
                 handler.postDelayed(this, 500);
             }

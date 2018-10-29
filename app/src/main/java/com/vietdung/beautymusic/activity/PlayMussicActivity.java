@@ -18,6 +18,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -253,9 +254,14 @@ public class PlayMussicActivity extends AppCompatActivity implements SongMusicAd
             public void onClick(View view) {
 //                startActivity(new Intent(getApplicationContext(),MainActivity.class));
                 if(musicService.isCancelMain()) {
-                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                    Intent intent = new Intent(PlayMussicActivity.this,MainActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                    Log.d("start Activity", "onClick: ");
+
                 }else{
                     onBackPressed();
+                    Log.d("onBackPressed", "onClick: ");
                 }
 
 
