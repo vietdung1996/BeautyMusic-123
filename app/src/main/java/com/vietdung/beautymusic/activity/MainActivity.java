@@ -267,7 +267,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 if (musicService != null && musicBound && musicService.isPng()) {
-                    seekBarBottom.setMax(musicService.getTimeTotal());
                     seekBarBottom.setProgress(musicService.getCurrentPosition());
                     tv_SongBottom.setText(musicService.getNameSong());
                     tv_ArtistBottom.setText(musicService.getNameArtist());
