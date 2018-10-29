@@ -55,6 +55,16 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
     private boolean isRestartNotifi = false;
     private boolean isCancelPlayMusic = false;
 
+    private boolean isCancelMain = false;
+
+    public boolean isCancelMain() {
+        return isCancelMain;
+    }
+
+    public void setCancelMain(boolean cancelMain) {
+        isCancelMain = cancelMain;
+    }
+
     String channelId = "default_channel_id";
     String channelDescription = "Default Channel";
     NotificationManager notificationManager;

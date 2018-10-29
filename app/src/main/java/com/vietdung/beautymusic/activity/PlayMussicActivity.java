@@ -251,7 +251,14 @@ public class PlayMussicActivity extends AppCompatActivity implements SongMusicAd
         tb_PlayMusic.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+//                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                if(musicService.isCancelMain()) {
+                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                }else{
+                    onBackPressed();
+                }
+
+
             }
         });
     }
