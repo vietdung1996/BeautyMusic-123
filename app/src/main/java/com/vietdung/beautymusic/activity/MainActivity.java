@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
             if(musicService!=null&&musicBound){
                 if(musicService.isRunBackground()==true){
                     musicService.setRunBackground(false);
+                    musicService.setCancelMain(false);
                 }
                 if (musicService.isCancelPlayMusic() == true) {
                     musicService.setCancelPlayMusic(false);
@@ -161,11 +162,13 @@ public class MainActivity extends AppCompatActivity {
         if(musicService!=null){
             musicService.setRunBackground(true);
             musicService.setCancelPlayMusic(true);
+            musicService.setCancelMain(true);
            // Log.d("chay vao day main", "onDestroy: ");
         }else{
             MusicService musicService1 = (MusicService) AppController.getInstance().getMusicService();
             musicService1.setRunBackground(true);
             musicService1.setCancelPlayMusic(true);
+            musicService1.setCancelMain(true);
         }
         //Log.d("service max ngu", "onDestroy: ");
         musicService=null;
@@ -225,7 +228,7 @@ public class MainActivity extends AppCompatActivity {
 
                 });
             }
-        } else if (musicService1 != null && musicBound && musicService1.isPng()) {
+        } else if (musicService1 != null && musicService1.isPng()) {
             tv_SongBottom.setText(musicService1.getNameSong());
             tv_ArtistBottom.setText(musicService1.getNameArtist());
             seekBarBottom.setMax(musicService1.getTimeTotal());
@@ -266,12 +269,13 @@ public class MainActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
+
                 if (musicService != null && musicBound && musicService.isPng()) {
                     seekBarBottom.setProgress(musicService.getCurrentPosition());
                     tv_SongBottom.setText(musicService.getNameSong());
                     tv_ArtistBottom.setText(musicService.getNameArtist());
                     musicService.autoNextSong();
-                    Log.d("chay vao day", "run:"+musicService.getNameSong()+musicService.getCurrentPosition());
+                    Log.d("chay vao day", "run:"+musicService.getNameSong());
                 }
                 handler.postDelayed(this, 500);
             }
@@ -329,6 +333,7 @@ public class MainActivity extends AppCompatActivity {
         if (checkPermissions()) {
             initView();
             addEvents();
+
         } else {
             finish();
         }
