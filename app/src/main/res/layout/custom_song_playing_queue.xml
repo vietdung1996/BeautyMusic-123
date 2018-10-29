@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin5dp"
+    android:layout_marginBottom="@dimen/margin5dp"
+    >
+
+    <ImageView
+        android:id="@+id/ivBeatsPlaying"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/beats"
+        android:layout_marginLeft="@dimen/margin5dp"
+        />
+    <TextView
+        android:id="@+id/tvSongNamePlaying"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/ivBeatsPlaying"
+        android:layout_marginLeft="@dimen/margin5dp"
+        android:layout_marginTop="@dimen/margin5dp"
+
+        android:text="ABC"
+        android:textSize="18dp"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <TextView
+        android:id="@+id/tvAuthorNamePlaying"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvSongNamePlaying"
+        android:layout_marginLeft="@dimen/margin5dp"
+        android:layout_toRightOf="@+id/ivBeatsPlaying"
+        android:text="xyz"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorBlue"
+        android:layout_below="@+id/tvAuthorNamePlaying"
+        android:layout_marginTop="@dimen/margin10dp"/>
+
+    <!--
+    <ImageView
+        android:id="@+id/ivCornerPlaying"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/margin5dp"
+        android:src="@drawable/corner" />
+        -->
+
+</RelativeLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/black">
+
+    <ImageView
+        android:id="@+id/ivNotifi"
+        android:layout_width="@dimen/album_art"
+        android:layout_height="@dimen/album_art"
+        android:gravity="center"
+        android:src="@drawable/default_album_art"/>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/padding_left">
+
+        <TextView
+            android:id="@+id/tv_track"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:textColor="@color/white"
+            android:id="@+id/tv_artist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <ImageButton
+        android:layout_gravity="center"
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/backtrackbutton"
+        android:background="@color/backgroungtransparent"
+        android:layout_marginLeft="@dimen/margin10dp"
+        />
+
+    <ImageButton
+        android:id="@+id/iv_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pausetrack"
+        android:layout_gravity="center"
+        android:background="@color/backgroungtransparent"
+        android:layout_marginLeft="@dimen/margin10dp"/>
+
+    <ImageButton
+        android:id="@+id/iv_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/next_track"
+        android:layout_gravity="center"
+        android:background="@color/backgroungtransparent"
+        android:layout_marginLeft="@dimen/margin10dp"
+        android:layout_marginRight="@dimen/margin5dp"/>
+
+</LinearLayout>

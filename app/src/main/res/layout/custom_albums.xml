@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin10dp">
+    <ImageView
+        android:id="@+id/ivAlbums"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:src="@drawable/musicalbums"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"/>
+    <FrameLayout
+        android:layout_width="160dp"
+        android:layout_height="70dp"
+        android:layout_gravity="top"
+        android:background="@color/backgroungtransparentGreen">
+
+        <TextView
+            android:id="@+id/tvAlbumsAuthorName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tên ca sĩ"
+            android:layout_gravity="bottom"
+            android:layout_margin="@dimen/margin10dp"/>
+        <TextView
+            android:id="@+id/tvAlbumsSong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tên bài hát"
+            android:layout_gravity="top"
+            android:textSize="@dimen/margin20dp"
+            android:textStyle="bold"
+            android:layout_margin="@dimen/margin10dp"
+            android:maxLines="1"/>
+
+    </FrameLayout>
+
+
+</FrameLayout>

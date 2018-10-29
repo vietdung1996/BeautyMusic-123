@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin5dp"
+    android:layout_marginBottom="@dimen/margin5dp"
+    >
+
+    <ImageView
+        android:id="@+id/ivBeats"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/beats"
+        android:layout_marginLeft="@dimen/margin5dp"
+      />
+    <TextView
+        android:id="@+id/tvSongName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/ivBeats"
+        android:layout_marginLeft="@dimen/margin5dp"
+        android:layout_marginTop="@dimen/margin5dp"
+        android:singleLine="true"
+        android:text="ABC"
+        android:textSize="18dp"
+        android:textColor="@color/colorPrimaryDark"/>
+    <TextView
+        android:id="@+id/tvAuthorName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvSongName"
+        android:layout_toRightOf="@+id/ivBeats"
+        android:layout_marginLeft="@dimen/margin5dp"
+        android:singleLine="true"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginRight="@dimen/margin5dp"
+        android:layout_marginLeft="@dimen/margin5dp"
+        android:background="@color/colorBlue"
+        android:layout_below="@+id/tvAuthorName"
+        android:layout_marginTop="@dimen/margin10dp"/>
+
+</RelativeLayout>

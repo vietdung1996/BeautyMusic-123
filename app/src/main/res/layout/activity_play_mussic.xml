@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.PlayMussicActivity"
+    android:background="@drawable/music"
+
+    >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tbPlayMussic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.Toolbar>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivCircleMusic"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        app:civ_border_color="@color/colorBlack"
+        app:civ_border_width="2dp"
+        android:src="@drawable/beatslogo" />
+    <ImageView
+        android:id="@+id/ibBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tbPlayMussic"
+        android:src="@drawable/backtrackbutton"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="@dimen/margin10dp"
+
+        />
+
+    <ImageView
+        android:id="@+id/ibNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/ibBack"
+        android:src="@drawable/nexttrackbutton"
+        android:layout_marginRight="@dimen/margin10dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvTime"
+        android:text="00:00"
+        android:textSize="15dp"
+        android:textColor="@color/colorWhite"
+        android:layout_below="@+id/ivCircleMusic"
+        android:layout_marginLeft="@dimen/margin5dp"/>
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvTimeTotal"
+        android:textSize="15dp"
+        android:textColor="@color/colorWhite"
+        android:layout_below="@+id/ivCircleMusic"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/margin5dp"
+       />
+    <SeekBar
+        android:id="@+id/seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTime"/>
+
+    <ImageView
+        android:id="@+id/ivSuffle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/ivPause"
+        android:layout_marginEnd="26dp"
+        android:src="@drawable/iconsuffle" />
+
+    <ImageView
+        android:id="@+id/ivRepeat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/ibBack"
+        android:layout_below="@+id/seekbar"
+        android:src="@drawable/repeattrack" />
+
+    <ImageButton
+        android:id="@+id/ivPause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seekbar"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/pausetrack"
+        android:background="@color/backgroungtransparent"/>
+    <ImageButton
+        android:id="@+id/ivStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seekbar"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/playtrack"
+        android:background="@color/backgroungtransparent"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvMusicSong"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ivRepeat"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorWhite"
+        android:layout_marginTop="@dimen/margin5dp">
+
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>

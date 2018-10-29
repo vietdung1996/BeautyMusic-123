@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100"
+    tools:context=".activity.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tbMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary"
+        app:title="@string/app_name">
+
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tbMain"
+        app:tabSelectedTextColor="@color/colorAccent">
+
+    </android.support.design.widget.TabLayout>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_below="@+id/tabLayout"
+        android:layout_weight="100">
+
+    </android.support.v4.view.ViewPager>
+
+
+     <RelativeLayout
+         android:layout_width="match_parent"
+         android:layout_height="80dp"
+         android:layout_alignParentBottom="true"
+         android:background="@color/colorWhite">
+
+         <ImageView
+             android:id="@+id/ivBeatBottom"
+             android:layout_width="80dp"
+             android:layout_height="match_parent"
+             android:padding="@dimen/margin5dp"
+             android:src="@drawable/beats" />
+         <SeekBar
+             android:layout_alignParentTop="true"
+             android:id="@+id/seekbarBottom"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_toRightOf="@id/ivBeatBottom"
+            />
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/tvSongs"
+             android:textSize="@dimen/fab_margin"
+             android:layout_below="@+id/seekbarBottom"
+             android:layout_toRightOf="@+id/ivBeatBottom"
+             android:textStyle="bold"
+             android:layout_toLeftOf="@+id/ivPauseBottom"/>
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/tvArtist"
+             android:layout_below="@+id/tvSongs"
+             android:layout_toRightOf="@+id/ivBeatBottom"
+             android:layout_toLeftOf="@+id/ivPauseBottom" />
+
+
+         <ImageView
+             android:id="@+id/ivPauseBottom"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentBottom="true"
+             android:layout_alignParentEnd="true"
+             android:src="@drawable/pause"
+             android:layout_marginBottom="@dimen/margin10dp"
+             android:layout_marginRight="@dimen/margin5dp"/>
+
+
+     </RelativeLayout>
+
+
+
+
+</LinearLayout>
